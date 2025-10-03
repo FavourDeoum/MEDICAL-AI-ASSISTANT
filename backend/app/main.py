@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.routes import health, analysis, research
+import uvicorn
 
 app = FastAPI(
     title="MediCare AI Backend",
@@ -33,3 +34,6 @@ async def root():
         "docs": "/docs",
         "status": "running"
     }
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
