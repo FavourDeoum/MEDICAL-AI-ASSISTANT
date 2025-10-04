@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.config import settings
-from app.routes import health, analysis, research
+from .config import settings
+from .routes import health, analysis, research
 
 app = FastAPI(
     title="MediCare AI Backend",
